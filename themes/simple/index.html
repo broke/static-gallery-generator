@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>{{sitename}}</title>
+    <meta charset="utf-8" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="static/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/gallery.css" />
+    <script type="text/javascript" src="static/js/jquery-3.2.1.min.js">
+    </script>
+    <script type="text/javascript" src="static/js/lightbox.min.js"></script>
+</head>
+
+<body>
+    <div class="head">{{sitename}}</div>
+    {% for collection in collections %}
+    <div class="collection">
+        <div class="collection-name">{{collection.name}}</div>
+        <div class="tiles">
+            {% for photo in collection.photos %}
+            <div class="tile" width="{{thumbnail_size[0]}}"
+                 height="{{thumbnail_size[1]}}">
+                <a href="{{photo.origin}}" data-lightbox="{{collection.name}}"
+                   title="{{collection.name}}: {{photo.description}}">
+                    <img src="{{ photo.thumbnail }}" class="thumbnail">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    <div class="clear"></div>
+    </div>
+    {% endfor %}
+    <div class="footer">
+        static gallery generator (SGG), version: {{version}}
+        <br>
+        <a href="https://github.com/broke/static-gallery-generator">
+            <img src="static/img/GitHub-Mark-32px.png">
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Karma;
+    src: url(../font/Karma-Regular.ttf);
+}
+
+body {
+    font-family: Karma;
+    background-color: rgb(246, 246, 246);
+    color: #222;
+}
+
+.head {
+    font-size: 3em;
+    text-align: center;
+}
+
+.collection {
+    border-style: solid;
+    border-color: #888;
+    padding-top: 30px;
+    border-width: 1px 0px 0px 0px;
+    border-style: dashed;
+}
+
+.collection-name {
+    font-size: 2em;
+    float: left;
+    width: 15%;
+    top: 0px;
+    position: sticky;
+}
+
+.tiles {
+    float: left;
+    margin: -20px auto 20px auto;
+    width: 85%;
+    text-align: center;
+}
+
+.tile {
+    display: inline-block;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 820px) {
+    .collection-name {
+        font-size: 2em;
+        float: none;
+        width: 100%;
+        background-image: linear-gradient(rgba(246, 246, 246, 1),
+                                          rgba(246, 246, 246, 1) 95%,
+                                          rgba(246, 246, 246, 0));
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .tiles {
+        float: none;
+        margin: 0px auto;
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+.thumbnail {
+    display: table-cell;
+    vertical-align: middle;
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    -moz-box-shadow:    0 0 15px rgba(0,0,0,0.6);
+    box-shadow:         0 0 15px rgba(0,0,0,0.6);
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 3em;
+}
